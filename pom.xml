@@ -24,6 +24,8 @@
             <target>1.8</target>
         </configuration>
     </plugin>
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+
     </plugins>
   </build>
 
@@ -56,6 +58,12 @@
     <groupId>org.jfree</groupId>
     <artifactId>jcommon</artifactId>
     <version>1.0.17</version>
+</dependency>
+<dependency>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-surefire-plugin</artifactId>
+  <version>3.0.0-M3</version>
+  <type>maven-plugin</type>
 </dependency>
 
 
