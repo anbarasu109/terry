@@ -31,7 +31,6 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.AndroidServerFlag;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import com.zoho.salesiq.pageclass.BaseSetupWeb;
-import com.zoho.qa.server.WebdriverQAUtil;
 import com.zoho.salesiq.pageclass.BaseSetupDevice2;
 import com.zoho.salesiq.pageclass.Extentreportclass;
 
@@ -64,7 +63,7 @@ public class BaseSetupiOS extends BaseSetupWeb {
 	public void initdriver() {
 		try
 		{
-		platform = WebdriverQAUtil.getOSPlatform();
+		platform = System.getProperty("Platform");
 		setupWeb = new BaseSetupWeb();
 		baseSetup2 = new BaseSetupDevice2();
 		if (platform.equalsIgnoreCase("iOS")) {

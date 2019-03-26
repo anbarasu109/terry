@@ -6,7 +6,6 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
-import com.zoho.qa.server.WebdriverQAUtil;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -51,14 +50,14 @@ public class ZohoSalesiqiOS {
 	public static String reportpath;
 	static String postStatus="True";
 
-
+	
 	public static void testSalesiqiOS() throws UnknownHostException,IOException,InterruptedException {
 
 		System.out.print("before extended report start");
 
 		// TODO Auto-generated method stub
 		try {
-			postStatus = WebdriverQAUtil.ChatPostStatus();
+			postStatus = System.getProperty("PostToChannel");
 		}
 		catch(Exception e)
 		{
@@ -67,7 +66,7 @@ public class ZohoSalesiqiOS {
 		}
 
 //		 System.out.print("before automation start");
-		if(postStatus.equalsIgnoreCase("Yes"))
+		if(postStatus.equalsIgnoreCase("True"))
 		{
 		ChatUtil.automationstart(true);
 		}
@@ -78,11 +77,11 @@ public class ZohoSalesiqiOS {
        		 try
        		 {
 
-		String url = WebdriverQAUtil.getBuildlable();
+		String url = System.getProperty("APKURL");
 
-		System.out.println("before assign module"+WebdriverQAUtil.getModule());
+		System.out.println("before assign module"+System.getProperty("ModuleSelection"));
 		
-		moduleList= WebdriverQAUtil.getModule();
+		moduleList= System.getProperty("ModuleSelection");
 		System.out.println("print assigned variable"+moduleList);
 		System.out.print("before"+url);
 		if(url!=null)
@@ -104,7 +103,7 @@ catch(Exception e)
 		reportpath = "http://" + serverHostName + ":" + serverPortNumber + "/reports/" + Extentreportclass.reportime;
 		
 		String filePath = "http://" + serverHostName + ":" + serverPortNumber + "/reports/" + Extentreportclass.reportime;
-		Hashtable<Object, Object> ht = new Hashtable<>();
+		Hashtable<Object, Object> ht = new Hashtable<Object, Object>();
 		long starttime = System.currentTimeMillis();
 try{
 

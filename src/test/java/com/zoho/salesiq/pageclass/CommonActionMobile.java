@@ -239,7 +239,7 @@ public class CommonActionMobile {
 	
 	public void flashElement(MobileElement el)
 	{
-		HashMap<String, Object> scriptArgs = new HashMap<>();
+		HashMap<String, Object> scriptArgs = new HashMap<String, Object>();
 		scriptArgs.put("element", el.getId());
 		scriptArgs.put("durationMillis", 50); // how long should each flash take?
 		scriptArgs.put("repeatCount", 20); // how many times should we flash?

@@ -31,7 +31,7 @@ import java.util.Arrays;
 import java.io.InputStream;
 
 import com.google.gson.JsonElement;
-import com.zoho.qa.server.WebdriverQAUtil;
+
 
 import org.json.JSONException;
 
@@ -44,7 +44,7 @@ public class ChatUtil
 {
     
     public static String buildversion="";
-    public static String postStatus="Yes";
+    public static String postStatus="True";
     public static String getSeviceName="";
 
     public static int overallusecasecount = ZohoSalesiq.total;
@@ -54,11 +54,11 @@ public class ChatUtil
 
             try{
 
-                 buildversion = WebdriverQAUtil.getBuildVersion();
-                 postStatus = WebdriverQAUtil.ChatPostStatus();
+                 buildversion = System.getProperty("BuildVersion");
+                 postStatus =  System.getProperty("PostToChannel");
                  
                  System.out.println("post status________________________________________"+postStatus);
-                 if(WebdriverQAUtil.getCurrentService().equalsIgnoreCase("SalesiqiOS"))
+                 if(System.getProperty("Platform").equalsIgnoreCase("iOS"))
                  {
                 	 getSeviceName="iOS"; 
                  }
@@ -104,7 +104,7 @@ public class ChatUtil
          
           try{
 
-                 buildversion = WebdriverQAUtil.getBuildVersion();
+                 buildversion = System.getProperty("BuildVersion");
             }
             catch(Exception e)
             {
@@ -182,7 +182,7 @@ public class ChatUtil
 
     private static String getSubject(Hashtable report)
     {
-    	   if(WebdriverQAUtil.getCurrentService().equalsIgnoreCase("SalesiqiOS"))
+    	   if(System.getProperty("Platform").equalsIgnoreCase("iOS"))
            {
           	 getSeviceName="iOS"; 
            }
@@ -228,8 +228,8 @@ public class ChatUtil
 
         try
         {
-        	postStatus = WebdriverQAUtil.ChatPostStatus();
-            if(postStatus.equalsIgnoreCase("Yes"))
+        	postStatus =  System.getProperty("PostToChannel");
+            if(postStatus.equalsIgnoreCase("True"))
              {
             String channelName = Keymanager("channelname");
            
@@ -299,13 +299,13 @@ public class ChatUtil
 
         try
         {
-        	if(WebdriverQAUtil.getChannelName().isEmpty())
+        	if(System.getProperty("ChannelList").isEmpty())
         	{
             channelName = Keymanager("channelname");
         	}
         	else
         	{
-        		channelName=WebdriverQAUtil.getChannelName();
+        		channelName=System.getProperty("ChannelList");
         	}
            
             String aToken = Keymanager("atoken");

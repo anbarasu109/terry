@@ -28,7 +28,7 @@ import io.appium.java_client.android.AndroidDriver;
 
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.Markup;
-import com.zoho.qa.server.WebdriverQAUtil;
+
 import com.zoho.salesiq.pageclass.ZohoSalesiq;
 import java.util.List;
 import java.util.Arrays;
@@ -46,8 +46,8 @@ public class Extentreportclass  {
 	public static ExtentReports extent;
 	public static ExtentTest test;
 	public static ExtentHtmlReporter htmlReporter;
-	public static TreeMap<String, Boolean> tm = new TreeMap<>();
-	public static Hashtable<Object, Object> ht = new Hashtable<>();
+	public static TreeMap<String, Boolean> tm = new TreeMap<String, Boolean>();
+	public static Hashtable<Object, Object> ht = new Hashtable<Object, Object>();
 	private static String currentTestCase="";
 	private static String currentUseCase="";
 	public static String categories="";
@@ -87,7 +87,7 @@ public class Extentreportclass  {
 		htmlReporter.config().setDocumentTitle("Salesiq Mobile Automation report");
 		htmlReporter.config().setReportName("Testing");
 		htmlReporter.loadXMLConfig(configfilePath() + "extent-config.xml");
-		htmlReporter.config().setReportName(WebdriverQAUtil.getModule());
+		//htmlReporter.config().setReportName(WebdriverQAUtil.getModule());
 		return htmlReporter;
 		
 	}
