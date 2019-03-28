@@ -128,7 +128,7 @@ public class OnlineChatTest extends BaseSetup{
 		sendMailFunctionality= new SendMailFunctionality(driver);
 		crmFunctionality= new CRMIntegreationFunctionality(driver);
 	}
-	@Test
+	
 	public void ongoingChatExecution()throws InterruptedException, MalformedURLException, Exception {
 //		notification.openPushNotification(testcase);
 //		notification.tapClearAllBtn(testcase);
