@@ -51,7 +51,7 @@ public class ZohoSalesiqiOS {
 	public static String reportpath;
 	static String postStatus="True";
 
-	@Test
+
 	public static void testSalesiqiOS() throws UnknownHostException,IOException,InterruptedException {
 
 		System.out.print("before extended report start");

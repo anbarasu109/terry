@@ -52,7 +52,7 @@ public class ZohoSalesiq {
 	public static String reportpath;
 	static String postStatus="Yes";
 	private static String serverHostName=null;
-
+	
 	@Test
 	public static void testSalesiqAndroid() throws UnknownHostException,IOException,InterruptedException {
 
@@ -72,7 +72,7 @@ public class ZohoSalesiq {
 		 
 		 
 //		 System.out.print("before automation start");
-		if(postStatus.equalsIgnoreCase("Yes"))
+		if(postStatus.equalsIgnoreCase("True"))
 		{
 		ChatUtil.automationstart(true);
 		}
