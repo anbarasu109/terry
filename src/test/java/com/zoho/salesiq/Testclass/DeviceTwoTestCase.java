@@ -32,7 +32,7 @@ public class DeviceTwoTestCase extends BaseSetupDevice2 {
 		deviceTwoCommon= new DeviceTwoPageCommon(driver1);
 	}
 
-@Test	
+	
 public void DeviceTwoLogin(String testcase)
 {
 	actions.pushFileForFileSharing("push file to device");

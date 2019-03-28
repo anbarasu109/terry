@@ -59,7 +59,7 @@ public class VisitorOnlineTest extends BaseSetup {
 
 	}
 
-	@Test	
+	
 	public void visitorOnline() throws InterruptedException,Exception
 	{
 		
