@@ -96,7 +96,7 @@ public class BaseSetup {
 		// android device push
 		
 		File appiumPath=null;
-		File androidApp = new File("apkFilePath/Salesiq.apk");
+		File androidApp = new File("apkFile/Salesiq.apk");
 
 		capabilities = new DesiredCapabilities();
 		capabilities.setCapability("avd", "emulator-5556");
