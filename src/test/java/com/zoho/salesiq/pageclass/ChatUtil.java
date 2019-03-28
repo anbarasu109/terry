@@ -231,9 +231,9 @@ public class ChatUtil
         	postStatus =  System.getProperty("PostToChannel");
             if(postStatus.equalsIgnoreCase("True"))
              {
-            String channelName = Keymanager("channelname");
+            String channelName = System.getProperty("ChannelList");
            
-            String aToken = Keymanager("atoken");
+            String aToken = System.getProperty("cliqSession");
 
            
          System.out.println("Channel name"+channelName);
@@ -301,14 +301,14 @@ public class ChatUtil
         {
         	if(System.getProperty("ChannelList").isEmpty())
         	{
-            channelName = Keymanager("channelname");
+            channelName = System.getProperty("ChannelList");
         	}
         	else
         	{
         		channelName=System.getProperty("ChannelList");
         	}
            
-            String aToken = Keymanager("atoken");
+            String aToken = System.getProperty("cliqSession");
             
 
            
@@ -362,7 +362,7 @@ public class ChatUtil
 
         try
         {
-            String channelName = Keymanager("channelname");
+            String channelName = System.getProperty("ChannelList");
 
             if(channelName.equals("updatesv"))
             {
@@ -373,7 +373,7 @@ public class ChatUtil
                 channelName = "salesiqtest";
             }
 
-            String aToken = Keymanager("atoken");
+            String aToken = System.getProperty("cliqSession");
 
             URL url = new URL("https://cliq.zoho.com/api/v1/channelsbyname/"+channelName+"/message?authtoken="+aToken+"&scope=InternalAPI");
 
@@ -413,8 +413,8 @@ public class ChatUtil
 
         try
         {
-            String channelName = Keymanager("channelname");
-            String aToken = Keymanager("atoken");
+            String channelName = System.getProperty("ChannelList");
+            String aToken = System.getProperty("cliqSession");
 
             URL url = new URL("https://cliq.zoho.com/api/v1/channelsbyname/"+channelName+"/message?authtoken="+aToken+"&scope=InternalAPI");
           
@@ -459,7 +459,7 @@ public class ChatUtil
 
         try
         {
-            String aToken = Keymanager("atoken");
+            String aToken = System.getProperty("cliqSession");
 
             URL url = new URL("https://cliq.zoho.com/api/v1/channelsbyname/"+channelName+"/message?authtoken="+aToken+"&scope=InternalAPI");
 
