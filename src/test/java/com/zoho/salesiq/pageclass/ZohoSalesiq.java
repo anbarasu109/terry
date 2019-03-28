@@ -34,6 +34,7 @@ import com.zoho.salesiq.pageclass.ChatUtil;
 import com.zoho.salesiq.pageclass.Hashtablecalculate;
 
 import org.testng.TestNG;
+import org.testng.annotations.Test;
 
 public class ZohoSalesiq {
 
@@ -52,7 +53,7 @@ public class ZohoSalesiq {
 	static String postStatus="Yes";
 	private static String serverHostName=null;
 
-
+	@Test
 	public static void testSalesiqAndroid() throws UnknownHostException,IOException,InterruptedException {
 
 		System.out.print("before extended report start");
@@ -115,23 +116,6 @@ catch(Exception e)
 		String filePath = "http://" + serverHostName + ":" + serverPortNumber + "/reports/" + Extentreportclass.reportime;
 		Hashtable<Object, Object> ht = new Hashtable<Object, Object>();
 		long starttime = System.currentTimeMillis();
-try{
-
-	File file1 = new File( testfilePath() + "SalesiqMobileConf.properties");
-	FileInputStream in = new FileInputStream(file1);
-	Properties props = new Properties();
-	props.load(in);
-	in.close();
-
-	FileOutputStream out = new FileOutputStream(file1);
-	props.setProperty("ReportPath", Extentreportclass.reportime);
-	props.store(out, null);
-	out.close();
-}
-catch(Exception e)
-{
-	System.out.print("Exception at report path updation in properties file");
-}
 		System.out.print("before condition");
 
 		try
