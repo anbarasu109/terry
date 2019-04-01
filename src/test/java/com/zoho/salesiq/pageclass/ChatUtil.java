@@ -144,7 +144,7 @@ public class ChatUtil
 
             String subject = getSubject(report);
            
-            String imgurl = "https://assets.pcmag.com/media/images/468082-zoho-cliq.png?width=333&height=245";//"https://www.zoho.com/salesiq/img/favicon.ico";
+            String imgurl = "https://www.zohowebstatic.com/sites/default/files/styles/product-home-page/public/icon-salesiq_6.png?width=333&height=245";
 
             String modules_result ="";
 

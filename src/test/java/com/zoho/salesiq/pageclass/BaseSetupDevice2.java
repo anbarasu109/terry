@@ -26,7 +26,7 @@ public class BaseSetupDevice2 {
 	{
 		File appiumPath=null;
 		String appiumURL1 = "";
-		 File androidApp = new File(apkFilePath()+"Salesiq.apk");
+		File androidApp = new File("apkFile/Salesiq.apk");
 			capabilities1 = new DesiredCapabilities();
 			capabilities1.setCapability("avd", "emulator-5554");
 			capabilities1.setCapability("platformName", "Android");
